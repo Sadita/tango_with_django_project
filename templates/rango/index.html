@@ -2,26 +2,55 @@
 
 {% load staticfiles %}
 
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 
     <head>
         <title>Rango</title>
         <!-- CSS -->
-        <link rel = "stylesheet" href="{% static "css/base.css" %}" />
+        <!link rel = "stylesheet" href="{% static "css/base.css" %}" />
         <!-- JavaScript -->
-        <script src="{% static "js/jquery.js" %}"></script>
+        <!script src="{% static "js/jquery.js" %}"><!/script>
     </head>
 
     <body>
         <h1>Rango says...</h1>
         <div>
-            hey there partner! <br />
-            <strong>{{boldmessage}}</strong></br>
+            hey there partner! <!br/>
+            <!strong>{{boldmessage}}<!/strong><!/br>
+        </div>
+
+        <br/><strong>Most Liked Categories</strong></br>
+        <div><br/>
+            {% if categories %}
+            <u1>
+                {% for category in categories %}
+                    <li>
+                    <a href="/rango/category/{{ category.slug }}">{{ category.name }}</a>
+                    </li>
+                {% endfor %}
+            </u1>
+            {% else %}
+                <strong>There are no categories present.</strong>
+            {% endif %}
+            </br>
+        </div>
+
+        <strong>Most Viewed Pages</strong>
+        <div><br/>
+            {% if pages %}
+            <u1>
+                {% for page in pages %}
+                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
+            </u1>
+            {% else %}
+            {% endif %}
+            </br>
         </div>
 
         <div>
             <!-- Image -->
-            <a href="/rango/about/">About</a><br />
+            <a href="/rango/about/">About Rango</a><br />
             <img src="{% static "images/rango.jpg" %}"
                  alt="Picture of Rango" />
         </div>
