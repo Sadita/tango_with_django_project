@@ -11,14 +11,16 @@
     </head>
 
     <body>
-        <h1>This tutorial has been put together by Sadita Ahmed </h1>
+        <h1>Rango says here is the about page. </h1>
         <div>
             <!-- Image -->
             <a href="/rango/index/">Index</a>
         </div>
 
         <div>
-            <img src="{{ MEDIA_URL }}images/cat.jpg"
+            <img src="{% static "images/staticat.jpg" %}"
+                 alt="Picture of Static Rango" />
+            <img src="{{ MEDIA_URL }}cat.jpg"
                  alt="Picture of Media Cat" />
         </div>
     </body>
