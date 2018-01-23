@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 {% load staticfiles %}
 {% load rango_template_tags %}
 
@@ -11,7 +12,7 @@
             {% endblock %}
         </title>
         <!-- CSS -->
-        <link rel = "stylesheet" href="{% static "css/base.css" %}" />
+        <link rel = "stylesheet" href="{% static 'css/base.css' %}" />
     </head>
 
     <body>
@@ -29,9 +30,9 @@
         <hr />
         <div>
             <u1>
-                <li><a href ="{% url 'rango:add_category' %}">Add New Category</a></li>
-                <li><a href ="{% url 'rango:about' %}">About</a></li>
-                <li><a href ="{% url 'rango:index' %}">Index</a></li>
+                <li><a href="{% url 'add_category' %}">Add New Category</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'index' %}">Index</a></li>
             </u1>
         </div>
     </body>
