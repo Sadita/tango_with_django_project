@@ -29,8 +29,11 @@ def show_category(request, category_name_slug):
 
 
 def about(request):
-    context_dict = {'boldmessage': "Grumpy, grumpy, grumpy cat"}
-    return render(request, 'rango/about.html', context=context_dict)
+
+    print(request.user)
+    print(request.method)
+
+    return render(request, 'rango/about.html', {})
 
 
 def add_category(request):
